@@ -35,7 +35,7 @@ mkdir data
 wget -P data/ https://raw.githubusercontent.com/UniversalDependencies/UD_French-Sequoia/master/fr_sequoia-ud-train.conllu data/
 wget -P data/ https://raw.githubusercontent.com/UniversalDependencies/UD_French-Sequoia/master/fr_sequoia-ud-test.conllu data/
 ```
-* Run training with default hyper-parameters:
+* Run training with default hyper-parameters (this shouldn't take more than a few minutes on an average laptop):
 ```
 python3 train_sentence_segmenter.py --train data/fr_sequoia-ud-train.conllu --test data/fr_sequoia-ud-test.conllu
 ```
