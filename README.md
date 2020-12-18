@@ -1,6 +1,6 @@
 # crf_sent_segmenter
 
-Train a CRF model for text segmentation into sentences.
+A CRF model for text segmentation into sentences.
 
 ## Requirements
 
@@ -15,18 +15,21 @@ pip3 install mosestokenizer
 ## Training
 
 For training, run `train_sentence_segmenter.py`. The minimal input is the training data. The minimal ouput is the model trained on this data.
-The training data (and optional test data) should be in [CONLL-U format](https://universaldependencies.org/format.html).
+
+The training data (and optional test data) should be in [CONLL-U format](https://universaldependencies.org/format.html). Sentences from the data are concatenated in paragraphs. Paragraph lengths are set randomly (see `--max-plen` argument). Thus the model is optimized to retrieve the sentence boundaries in such paragraphs.
+
 For more details and options, run `train_sentence_segmenter.py --help`.
 
 ## Inference
 
 For inference, run `run_sentence_segmenter.py`. It takes as input a text file and returns one split sentence per line.
+
 For more details and options, run `run_sentence_segmenter.py --help`.
 
 ## Quick example
 
-* Install all required modules
-* Download training and test data: [French Sequoia corpus](http://deep-sequoia.inria.fr/) from Universal Dependencies project. In root repository, run:
+* Install required modules
+* Download training and test data: [French Sequoia corpus](http://deep-sequoia.inria.fr/) from Universal Dependencies project. In the root of this repository, run:
 ```
 mkdir data
 wget -P data/ https://raw.githubusercontent.com/UniversalDependencies/UD_French-Sequoia/master/fr_sequoia-ud-train.conllu data/
