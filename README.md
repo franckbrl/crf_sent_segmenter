@@ -33,6 +33,7 @@ For more details and options, run `run_sentence_segmenter.py --help`.
 ```
 echo "Faut arrêter ces conneries de nord et de sud. Une fois pour toutes, le nord, suivant comment on est tourné, ça change tout." | python3 run_sentence_segmenter.py --model model_fr/sseg_model.pkl
 ```
+The model provided in `model_fr/sseg_model.pkl` was trained in the same way as shown below.
 
 ### Train a model
 
