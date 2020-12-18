@@ -28,6 +28,14 @@ For more details and options, run `run_sentence_segmenter.py --help`.
 
 ## Quick example
 
+### Just run inference
+
+```
+echo "Faut arrêter ces conneries de nord et de sud. Une fois pour toutes, le nord, suivant comment on est tourné, ça change tout." | python3 run_sentence_segmenter.py --model model_fr/sseg_model.pkl
+```
+
+### Train a model
+
 * Install required modules
 * Download training and test data: [French Sequoia corpus](http://deep-sequoia.inria.fr/) from Universal Dependencies project. In the root of this repository, run:
 ```
