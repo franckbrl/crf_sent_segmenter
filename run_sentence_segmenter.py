@@ -19,26 +19,27 @@ class preproc():
     def run_normalization(self, text):
         norm_text = self.normalize(text)
         norm_text = norm_text.replace("’", "'")
-        check_proc(text, norm_text)
+        self.check_proc(text, norm_text)
         return norm_text
 
     def run_tokenization(self, text):
         tokens = self.tokenize(text)
         tokens = html.unescape(" ".join(tokens))
         tokens = tokens.replace(" @-@ ", "-")
-        check_proc(text, tokens)
+        self.check_proc(text, tokens)
         return tokens.split()
 
-    
-def check_proc(before, after):
-    """
-    Ensure pre-processing step did not add or remove
-    any character (other than space).
-    """
-    len_before = len(before.replace(" ", ""))
-    len_after  = len( after.replace(" ", ""))
-    assert len_before == len_after
+    @staticmethod
+    def check_proc(before, after):
+        """
+        Ensure pre-processing step did not add or remove
+        any character (other than space).
+        """
+        len_before = len(before.replace(" ", ""))
+        len_after  = len( after.replace(" ", ""))
+        assert len_before == len_after
 
+        
 def preprocess_input(text, pproc):
     """
     Get normalized and tokenized paragraphs
